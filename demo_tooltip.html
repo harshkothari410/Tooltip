@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tooltip</title>
+</head>
+<body>
+
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="menu"><script>write_menu({path: "../../"})</script></td>
+    <td class="content">
+    <!-- content begin -->
+
+<style>
+span {
+  color: mediumblue;
+}
+</style>
+<script src="tooltip.js"></script>
+
+<div class="header">
+<h1>Tooltip.js</h1>
+</div>
+
+<div class="section">
+
+<span id="one">Boring and basic</span><br>
+<span id="two">Longer - with delay and html</span><br>
+<span id="three">Colored and with a title</span><br>
+<span id="four">More color choices and with a width</span><br>
+<span id="five">Another one - with defaults, offsets, and no width restrictions</span><br>
+<span id="six">Yet another - but using a style with a background image</span><br>
+</div>
+</table>
+<script>
+  // an ie bug currently prevents us from embedding these near the actual source
+  // because the element may not yet be created
+  tooltip_add({id: "one", html: "This is a very basic note with only defaults."});
+
+  tooltip_add({
+    id: "two",
+    html: "This is a longer note with <b>HTML markup</b> and a delay setting of 500 milliseconds",
+    delay: 500
+  })
+
+  tooltip_add({
+    id: "three",
+    html: "This is another example.  I don't really have anything to say in this location.",
+    title: "Some title",
+    border_color: 'green',
+    background: 'khaki',
+    color: 'darkblue'
+  })
+
+  tooltip_add({
+    id: "four",
+    html: "This is another example.  I don't really have anything to say in this location.",
+    title: "Some title",
+    border: '3px dashed red',
+    title_background: 'tomato',
+    title_color: 'limegreen',
+    background: 'khaki',
+    color: 'darkblue',
+    width: 150
+  })
+
+  tooltip_add({
+    id: "five",
+    html: "This is another example.  I don't really have anything to say in this location.",
+    title: "Some title",
+    offset_x: 20,
+    offset_y: 30,
+    width: ''
+  })
+
+  tooltip_add({
+    id: "six",
+    div_id: "custom_div", // use our own div since it is tricked out
+    html: "This is another example.  It is using a predeclared style.  I can dump as much in here as I want.<br>And<br>The<br>Style<br>is<br>fine.<br>The background image comes from the Cpanel xpevolution theme."
+  })
+</script>
+</body>
+</html>
